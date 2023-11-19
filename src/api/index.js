@@ -20,7 +20,7 @@ export const noAuth = async ({ method, url, data = {}, options = {} }) => {
     return res.data;
   } catch (err) {
     console.log(
-      err?.response?.data?.message || err?.message || "Something went wrong!"
+      err?.response?.data?.message || err?.message || "Something is wrong!"
     );
   }
 };
