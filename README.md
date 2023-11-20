@@ -15,7 +15,7 @@ URL: https://stg.dhunjam.in/account/admin/login
 Body:
 
 json
-Copy code
+
 {
   "username": "DJ@4",
   "password": "Dhunjam@2023"
@@ -23,7 +23,6 @@ Copy code
 Response:
 
 json
-Copy code
 {
   "status": 200,
   "response": "Success",
@@ -45,7 +44,6 @@ URL: https://stg.dhunjam.in/account/admin/4
 Response:
 
 json
-Copy code
 {
   "status": 200,
   "response": "Success",
@@ -75,7 +73,6 @@ URL: https://stg.dhunjam.in/account/admin/4
 Body:
 
 json
-Copy code
 {
   "amount": {
     "category_6": 100
@@ -84,7 +81,6 @@ Copy code
 Response:
 
 json
-Copy code
 {
   "status": 200,
   "response": "Success",
