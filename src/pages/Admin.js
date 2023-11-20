@@ -5,11 +5,11 @@ import BarGraph from "../components/BarGraph";
 
 export default function Admin() {
     const [data, setData] = useState({
-        category_6: 91,
-        category_7: 769,
-        category_8: 49,
-        category_9: 99,
-        category_10: 29,
+        category_6: 100,
+        category_7: 80,
+        category_8: 60,
+        category_9: 40,
+        category_10: 20,
     });
     const [details, setDetails] = useState({});
     const [selectedOption, setSelectedOption] = useState("yes");
