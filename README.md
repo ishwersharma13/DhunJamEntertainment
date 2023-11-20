@@ -1,73 +1,98 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## DhunJam Entertainment React Application
+This repository contains the source code for the DhunJam Entertainment React application. The application consists of two screens: Login and Admin Dashboard.
 
 ## Deployed Link
-https://6559a6c893efb177e0fda519--ishwerdhunjam.netlify.app/
+https://655ac8708ad8c528e422dd5e--ishwerdhunjam.netlify.app/
 
-## Available Scripts
+## Screens:
+Screen 1: Login
+Endpoint for Login:
+(POST) Admin - Login
 
-In the project directory, you can run:
+URL: https://stg.dhunjam.in/account/admin/login
 
-### `npm start`
+Body:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+json
+Copy code
+{
+  "username": "DJ@4",
+  "password": "Dhunjam@2023"
+}
+Response:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+json
+Copy code
+{
+  "status": 200,
+  "response": "Success",
+  "data": {
+    "id": 3,
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9....",
+  },
+  "server_err_msg": null,
+  "ui_err_msg": null
+}
+Screen 2: Admin Dashboard
+Endpoint for Getting Admin Details:
 
-### `npm test`
+(GET) Admin - Details
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+URL: https://stg.dhunjam.in/account/admin/4
+(Replace 4 with the ID received from the successful login response)
 
-### `npm run build`
+Response:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+json
+Copy code
+{
+  "status": 200,
+  "response": "Success",
+  "data": {
+    "id": 3,
+    "name": "Byg Brewski Brewing Company",
+    "location": "Hennur",
+    "charge_customers": true,
+    "amount": {
+      "category_6": 100,
+      "category_7": 80,
+      "category_8": 60,
+      "category_9": 40,
+      "category_10": 20
+    }
+  },
+  "server_err_msg": null,
+  "ui_err_msg": null
+}
+## Endpoint for Price Update:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+(PUT) Admin - Price Update
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+URL: https://stg.dhunjam.in/account/admin/4
+(Replace 4 with the ID received from the successful login response)
 
-### `npm run eject`
+Body:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+json
+Copy code
+{
+  "amount": {
+    "category_6": 100
+  }
+}
+Response:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+json
+Copy code
+{
+  "status": 200,
+  "response": "Success",
+  "data": {
+    "amount": {
+      "category_6": 444
+    }
+  },
+  "server_err_msg": null,
+  "ui_err_msg": null
+}
