@@ -22,7 +22,7 @@ const BarGraph = ({ data }) => {
       },
     },
   });
-
+//Bar graph data
   const chartData = {
     xAxis: [
       {
